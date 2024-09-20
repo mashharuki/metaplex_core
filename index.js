@@ -29,7 +29,7 @@ const createNft = async () => {
 
   //   こちらを自身のウォレットの格納場所に設定してください。
   const walletFile = JSON.parse(
-    fs.readFileSync("/Users/ytakahashi/.config/solana/id.json")
+    fs.readFileSync("/workspace/metaplex_core/.config/solana/id.json")
   );
 
   let keypair = umi.eddsa.createKeypairFromSecretKey(
