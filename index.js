@@ -12,6 +12,9 @@ import { irysUploader } from "@metaplex-foundation/umi-uploader-irys";
 import fs from "fs";
 import path from "path";
 
+/**
+ * NFTを発行するためのスクリプト
+ */
 const createNft = async () => {
   //
   // ** Setting Up Umi **
@@ -31,7 +34,7 @@ const createNft = async () => {
   const walletFile = JSON.parse(
     fs.readFileSync("/workspace/metaplex_core/.config/solana/id.json")
   );
-
+  // キーペアを作成
   let keypair = umi.eddsa.createKeypairFromSecretKey(
     new Uint8Array(walletFile)
   );
@@ -74,8 +77,8 @@ const createNft = async () => {
   //
 
   const metadata = {
-    name: "My NFT",
-    description: "This is an NFT on Solana",
+    name: "My Super NFT",
+    description: "This is a super NFT on Solana",
     image: irysImageUri,
     external_url: "https://example.com",
     attributes: [
@@ -124,7 +127,7 @@ const createNft = async () => {
   console.log("Creating NFT...");
   const tx = await create(umi, {
     asset,
-    name: "My NFT",
+    name: "My Super NFT",
     uri: irysMetadataUri,
   }).sendAndConfirm(umi);
 
