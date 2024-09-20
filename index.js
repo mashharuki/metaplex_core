@@ -2,13 +2,11 @@ import { create, mplCore } from "@metaplex-foundation/mpl-core";
 import {
   createGenericFile,
   generateSigner,
-  keypairIdentity,
-  signerIdentity,
-  sol,
+  keypairIdentity
 } from "@metaplex-foundation/umi";
 import { createUmi } from "@metaplex-foundation/umi-bundle-defaults";
-import { base58 } from "@metaplex-foundation/umi/serializers";
 import { irysUploader } from "@metaplex-foundation/umi-uploader-irys";
+import { base58 } from "@metaplex-foundation/umi/serializers";
 import fs from "fs";
 import path from "path";
 
@@ -32,7 +30,7 @@ const createNft = async () => {
 
   //   こちらを自身のウォレットの格納場所に設定してください。
   const walletFile = JSON.parse(
-    fs.readFileSync("/workspace/metaplex_core/.config/solana/id.json")
+    fs.readFileSync("/Users/harukikondo/.config/solana/id.json")
   );
   // キーペアを作成
   let keypair = umi.eddsa.createKeypairFromSecretKey(
@@ -125,6 +123,7 @@ const createNft = async () => {
   const asset = generateSigner(umi);
 
   console.log("Creating NFT...");
+  // NFTを作成するトランザクションを署名して送信
   const tx = await create(umi, {
     asset,
     name: "My Super NFT",
