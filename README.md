@@ -59,3 +59,6 @@
 4. [Umi Getting Started](https://developers.metaplex.com/umi/getting-started)
 5. [MetaPlex 公式サイト](https://www.metaplex.com/)
 6. [Solana Faucet サイト](https://faucet.solana.com/)
+7. [Irys 公式サイト](https://irys.xyz/)
+8. [Irys Tutorial - Using Irys With React + Vite](https://arweave-tools.irys.xyz/tutorials/vite)
+9. [Solana PlayGround - Tutorial - BossBattle](https://beta.solpg.io/tutorials/boss-battle)
